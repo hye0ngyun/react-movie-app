@@ -1,0 +1,12 @@
+.item-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+.item {
+  width: 45%;
+  padding: 20px;
+  border: 1px solid #aaa;
+  box-shadow: 0 0 5px 2px #aaa;
+}

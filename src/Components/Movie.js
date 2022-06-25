@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
+import style from "./Movie.module.css";
 
 export default function Movie({ movies }) {
   return (
-    <div>
+    <div className={style["item-wrap"]}>
       {movies.map((movie) => {
         return (
-          <div key={movie.id}>
+          <div key={movie.id} className={style["item"]}>
             <Link to={`/detail/${movie.id}`}>
               <h3>{movie.title}</h3>
             </Link>

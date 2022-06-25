@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import MovieDetail from "../Components/MovieDetail";
 
 export default function Detail() {
   const [loading, setLoading] = useState(true);
@@ -16,28 +17,5 @@ export default function Detail() {
     })();
   }, [id]);
 
-  return (
-    <>
-      {loading ? (
-        "Loading..."
-      ) : (
-        <>
-          <Link to={"/"}>
-            <p>back</p>
-          </Link>
-          <h3>Title: {movie.title}</h3>
-          <img src={movie.medium_cover_image} alt={movie.id} />
-          <p>Summary: {movie.description_intro}</p>
-          <p>Rating: {movie.rating}</p>
-          <p>Year: {movie.year}</p>
-          <p>genres</p>
-          <ul>
-            {movie.genres.map((genre) => (
-              <li key={genre}>{genre}</li>
-            ))}
-          </ul>
-        </>
-      )}
-    </>
-  );
+  return <>{loading ? "Loading..." : <MovieDetail movie={movie} />}</>;
 }
