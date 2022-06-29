@@ -11,7 +11,7 @@ export default function Movie({ movies }) {
               <h3>{movie.title}</h3>
             </Link>
             <img src={movie.medium_cover_image} alt={movie.title} />
-            <p>{movie.summary}</p>
+            <p>{`${movie.summary.slice(0, 250)}...`}</p>
             <p>genres</p>
             <ul>
               {movie.genres.map((genre) => (
